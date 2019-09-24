@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav
-      class="navbar navbar-dark navbar-expand-lg fixed-top py-0"
+      class="navbar navbar-dark navbar-expand-lg fixed-top py-0 scrolled"
       id="mainNavBar"
     >
       <a href="#" class="navbar navbar-brand px-0">CANDY</a>
@@ -160,5 +160,13 @@
     <script src="asset/js/jquery.min.js"></script>
     <script src="asset/js/popper.min.js"></script>
     <script src="asset/js/bootstrap.min.js"></script>
+    <script>
+      $(function() {
+        $(document).scroll(function() {
+          var $nav = $('#mainNavBar');
+          $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
   </body>
 </html>
